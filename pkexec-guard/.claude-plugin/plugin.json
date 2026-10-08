@@ -1,0 +1,8 @@
+{
+  "name": "pkexec-guard",
+  "version": "0.2.0",
+  "description": "Routes `sudo` in Bash calls to a password prompt the person can answer: pkexec on a Linux desktop, an osascript administrator dialog on macOS, and Windows sudo's UAC prompt on Windows.",
+  "author": {
+    "name": "Josh Kerr"
+  }
+}

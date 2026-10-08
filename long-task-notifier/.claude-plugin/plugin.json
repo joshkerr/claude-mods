@@ -1,0 +1,26 @@
+{
+  "name": "long-task-notifier",
+  "version": "0.2.0",
+  "description": "Shows a live timer for long-running Bash commands and background tasks, then toasts, chimes and sends a desktop notification when they finish, on Linux, macOS and Windows.",
+  "author": { "name": "Josh Kerr" },
+  "userConfig": {
+    "thresholdSeconds": {
+      "type": "number",
+      "title": "Threshold (seconds)",
+      "description": "Only commands that run at least this many seconds get a timer and a notification",
+      "default": 30
+    },
+    "sound": {
+      "type": "boolean",
+      "title": "Chime when done",
+      "description": "Play a short sound when a long task finishes (paplay on Linux, afplay on macOS, a Windows system sound)",
+      "default": true
+    },
+    "desktopNotification": {
+      "type": "boolean",
+      "title": "Desktop notification",
+      "description": "Also send a desktop notification (notify-send on Linux, Notification Center on macOS, a toast on Windows)",
+      "default": true
+    }
+  }
+}

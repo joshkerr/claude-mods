@@ -1,0 +1,9 @@
+{
+  "name": "claude-mods",
+  "owner": { "name": "Josh Kerr" },
+  "plugins": [
+    { "name": "pkexec-guard", "source": "./pkexec-guard", "description": "Routes sudo to a password prompt the person can answer: pkexec, a macOS administrator dialog, or Windows sudo." },
+    { "name": "long-task-notifier", "source": "./long-task-notifier", "description": "Live timer for long Bash commands, then a toast, chime and desktop notification when they finish." },
+    { "name": "herdr-statusline", "source": "./herdr-statusline", "description": "A band above the prompt with the herdr workspace and pane, the working directory, and git state." }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "name": "herdr-statusline",
+  "version": "0.2.0",
+  "description": "A band above the prompt showing the herdr workspace and pane, the working directory, and the git branch with its dirty/ahead/behind state, on Linux, macOS and Windows.",
+  "author": { "name": "Josh Kerr" },
+  "types": "./types/index.d.ts"
+}
