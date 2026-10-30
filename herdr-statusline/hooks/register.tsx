@@ -80,9 +80,12 @@ export const register: Register = on => {
     return next(e)
   })
 
+  // The band is one slot that every mod shares: whatever the mods beneath draw
+  // there (a usage band, say) is stacked under the status row, never hidden by it.
   on('ui.render', { component: 'AbovePrompt' }, async ($, e, next) => {
+    const below = await next(e)
     const s = await read($, status)
-    if (e.props.hasSurvey || s === null) return next(e)
+    if (e.props.hasSurvey || s === null) return below
 
     const { Box, Text } = $.ui.resolve(e)
     const parts: JSX.Element[] = []
@@ -110,6 +113,14 @@ export const register: Register = on => {
     }
     if (e.props.isWorking) parts.push(<Text key="working" color="claude">  ●</Text>)
 
-    return <Box flexDirection="row">{parts}</Box>
+    const row = <Box key="status" flexDirection="row">{parts}</Box>
+    // `engine` is the engine's own band, which draws nothing of its own here.
+    if (below.type === 'engine') return row
+    return (
+      <Box flexDirection="column">
+        {row}
+        {below}
+      </Box>
+    )
   })
 }
